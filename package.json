@@ -4,17 +4,24 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpileOnly --ignore-watch node_modules  src/shared/infra/http/server.ts ",
     "start": "ts-node src/shared/infra/http/index.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "test": "jest"
   },
   "dependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-typescript": "^7.10.1",
     "@types/cors": "^2.8.6",
     "@types/hapi__joi": "^17.1.0",
     "@types/redis": "^2.8.21",
     "aws-sdk": "^2.679.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-typescript-metadata": "^0.3.0",
     "bcryptjs": "^2.4.3",
     "celebrate": "^12.1.1",
     "class-transformer": "^0.2.3",
@@ -39,6 +46,8 @@
     "uuidv4": "^6.0.7"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.4",
     "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.6",
     "@types/ioredis": "^4.16.2",
@@ -49,6 +58,7 @@
     "@types/nodemailer": "^6.4.0",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
+    "babel-plugin-transform-decorators": "^6.24.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.10.1",
