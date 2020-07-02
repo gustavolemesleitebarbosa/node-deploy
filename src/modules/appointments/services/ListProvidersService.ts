@@ -29,10 +29,10 @@ export default class ListProviderService {
 
       console.log('A query no banco foi feita');
 
-      await this.cacheProvider.save(
-        `providers-list:${user_id}`,
-        classToClass(users)
-      );
+      // await this.cacheProvider.save(
+      //   `providers-list:${user_id}`,
+      //   classToClass(users)
+      // );
     }
 
     return users;
