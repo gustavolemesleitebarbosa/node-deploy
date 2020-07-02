@@ -33,7 +33,7 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         key: ${{ secrets.SSH_KEY }}
         source: "."
-        target: "test"
+        target: "~/app/node-deploy"
      
 
 
